@@ -1,6 +1,6 @@
 !function () {
   "use strict";
-  let f, p;
+  let f;
   f = (function () {
     return function (a) {
       if (a[0].isIntersecting) {
@@ -9,14 +9,17 @@
     };
   })();
 
-  p = function() {
-    return {
-      root: null,
-      threshold: 0.1,
-      rootMargin: '-200px'
+  Object.defineProperty(f, 'p', {
+    enumerable: true,
+    get: function() {
+      return {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '-200px'
+      }
     }
-  }();
-  const observer = new IntersectionObserver(f, p);
+  })
+  const observer = new IntersectionObserver(f, f.p);
   const screen = document.querySelector('.screen--cover')
   observer.observe(screen);
 
