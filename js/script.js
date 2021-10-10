@@ -17,9 +17,6 @@
       rootMargin: '-200px'
     }
   }();
-
-  console.log(f);
-
   const observer = new IntersectionObserver(f, p);
   const screen = document.querySelector('.screen--cover')
   observer.observe(screen);
