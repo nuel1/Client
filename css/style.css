@@ -305,6 +305,11 @@ section {
   align-items: center;
 }
 
+.goal .list-item:last-child {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 .icon-wrapper {
   display: flex;
   height: 50px;
