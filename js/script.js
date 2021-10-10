@@ -3,7 +3,6 @@
   let f, p;
   f = (function () {
     return function (a) {
-      console.log(a);
       if (a[0].isIntersecting) {
         document.documentElement.style.setProperty("--b-blur", "0");
       }
@@ -13,7 +12,7 @@
   p = function() {
     return {
       root: null,
-      threshold: 0.5,
+      threshold: 0.1,
       rootMargin: '-200px'
     }
   }();
